@@ -1,48 +1,62 @@
+/*Light Mode Color Pallet and Assets*/
 :root {
   --background-colors: linear-gradient(#4e70e9, #a3d6f2);
   --sub-background-color: #ffffff40;
   --box-color: #ffffffbf;
-  --font-color: #292437;
-  --home-button: url("https://cdn.discordapp.com/attachments/670844103730397216/1136884351414575114/Homeicon.png");
-  --theme-button: url("https://cdn.discordapp.com/attachments/670844103730397216/1136884352425414716/Darkicon.png");
-  --menu-button: url("https://cdn.discordapp.com/attachments/670844103730397216/1136884352173744198/Menuicon.png");
+  --main-color: #292437;
+  --home-button: url("./assets/svg/light/home.svg");
+  --theme-button: url("./assets/svg/light/theme.svg");
+  --menu-button: url("./assets/svg/light/menu.svg");
+  --cancel-button: url("./assets/svg/light/cancel.svg");
 }
+
+/*Dark Mode Color Pallet and Assets*/
 [data-theme="dark"] {
   --background-colors: linear-gradient(#201567, #2e438c);
   --sub-background-color: #00000040;
   --box-color: #000000bf;
-  --font-color: #f7fff7;
-  --home-button: url("https://cdn.discordapp.com/attachments/670844103730397216/1136884351146143874/Homeicon-1.png");
-  --theme-button: url("https://cdn.discordapp.com/attachments/670844103730397216/1136884351691411556/Lighticon.png");
-  --menu-button: url("https://cdn.discordapp.com/attachments/670844103730397216/1136884351930478663/Menuicon-1.png");
+  --main-color: #f7fff7;
+  --home-button: url("./assets/svg/dark/home.svg");
+  --theme-button: url("./assets/svg/dark/theme.svg");
+  --menu-button: url("./assets/svg/dark/menu.svg");
+  --cancel-button: url("./assets/svg/dark/cancel.svg");
 }
+
+/*Only for "Big Screens"*/
 @media only screen and (min-width: 600px) {
+  /*Disables Submenu and Corresponding Button*/
   .menu {
     display: None;
   }
   .submenu {
     display: None;
   }
+  /*Testing*/
   .box {
     flex-direction: row;
   }
 }
+
+/*Only for "Small Screens"*/
 @media only screen and (max-width: 599px) {
+  /*Enables Submenu and Corresponding Button when screen is too small*/
   .nav {
     display: None;
   }
   /*show the submenu when input is checked*/
-  input:checked.drop ~ .submenu {
+  input:checked ~ .submenu {
     background: var(--sub-background-color);
     border-radius: 10px;
     height: auto;
     display: block;
     width: 100%;
   }
+  /*Testing*/
   .box {
     flex-direction: column;
   }
 }
+
 body {
   margin: 0px;
   padding: 0px;
@@ -51,59 +65,11 @@ body {
   background-attachment: fixed;
   background-size: cover;
   font-family: "Avenir", sans-serif;
-  color: var(--font-color);
+  color: var(--main-color);
 }
-.image {
-  width: min(calc(100vw - 50px), 1200px);
-  margin: auto;
-  content: url("https://cdn.discordapp.com/attachments/670844103730397216/1137189716953927720/Testier.png");
-}
-.image_2 {
-  width: 50vh;
-  margin: auto;
-  content: url("https://cdn.discordapp.com/attachments/670844103730397216/1130825211885920296/PFP.png");
-}
-.home {
-  content: var(--home-button);
-  width: 50px;
-  height: 50px;
-}
-.about {
-  margin-left: auto;
-}
-.creations {
-  margin: auto 20px;
-}
-.nav {
-  height: 50px;
-  line-height: 50px;
-  vertical-align: middle;
-  font-weight: bold;
-  font-size: 18px;
-}
-.sub {
-  display: flex;
-  width: 100%;
-  padding-left: 20px;
-  height: 50px;
-  line-height: 50px;
-  vertical-align: left;
-  font-weight: bold;
-  font-size: 18px;
-}
-.theme {
-  content: var(--theme-button);
-  margin-left: auto;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
-.menu {
-  content: var(--menu-button);
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-}
+
+
+/*CSS For Topbar*/
 .topbar {
   display: flex;
   flex-wrap: wrap;
@@ -115,6 +81,87 @@ body {
   background: var(--box-color);
   position: sticky;
   top: 25px;
+}
+
+.home {
+  content: var(--home-button);
+  width: 50px;
+  height: 50px;
+}
+
+.page {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+/*Lines up Navigation and spaces them correctly*/
+.nav {
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 18px;
+}
+.about {
+  margin-left: auto;
+}
+.creations {
+  margin: auto 20px;
+}
+
+.theme {
+  content: var(--theme-button);
+  margin-left: auto;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.menu {
+  content: var(--menu-button);
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+#dropdown:checked ~ label .menu {
+  content: var(--cancel-button);
+}
+
+/*For Links in Submenu*/
+.sub {
+  display: flex;
+  width: 100%;
+  padding-left: 20px;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: left;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/*hide the inputs/checkmarks and submenu*/
+input,
+.submenu {
+  display: none;
+}
+/*position the label*/
+label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+
+/*TEMPERARY Testing Stuff*/
+.image {
+  width: min(calc(100vw - 50px), 1200px);
+  margin: auto;
+  content: url("https://cdn.discordapp.com/attachments/670844103730397216/1137189716953927720/Testier.png");
+}
+.image_2 {
+  width: 50vh;
+  margin: auto;
+  content: url("https://cdn.discordapp.com/attachments/670844103730397216/1130825211885920296/PFP.png");
 }
 .box {
   width: calc(100vw - 15vw);
@@ -128,19 +175,4 @@ body {
 }
 .text {
   padding: 25px;
-}
-/*hide the inputs/checkmarks and submenu*/
-input,
-.submenu {
-  display: none;
-}
-/*position the label*/
-label {
-  position: relative;
-  display: block;
-  cursor: pointer;
-}
-.break {
-  flex-basis: 100%;
-  height: 0;
 }
