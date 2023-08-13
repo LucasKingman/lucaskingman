@@ -1,3 +1,5 @@
+//Dark mode
+
 function detectColorScheme() {
   var theme = "light"; //default to light
 
