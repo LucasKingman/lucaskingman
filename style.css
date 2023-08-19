@@ -31,10 +31,6 @@
   .submenu {
     display: None;
   }
-  /*Testing*/
-  .box {
-    flex-direction: row;
-  }
 }
 
 /*Only for "Small Screens"*/
@@ -50,10 +46,6 @@
     height: auto;
     display: block;
     width: 100%;
-  }
-  /*Testing*/
-  .box {
-    flex-direction: column;
   }
 }
 
@@ -154,25 +146,32 @@ label {
 
 /*TEMPERARY Testing Stuff*/
 .image {
-  width: min(calc(100vw - 50px), 1200px);
+  width: min(calc(100vw - 25px), 800px);
   margin: auto;
   content: url("https://cdn.discordapp.com/attachments/670844103730397216/1137189716953927720/Testier.png");
 }
 .image_2 {
-  width: 50vh;
+  width: min(calc(60vw - 100px), 1200px);
+  height: min(calc(40vw - 100px), 1200px);;
+  border-radius: 10px;
   margin: auto;
   content: url("https://cdn.discordapp.com/attachments/670844103730397216/1130825211885920296/PFP.png");
 }
 .box {
-  width: calc(100vw - 15vw);
-  height: auto;
-  font-size: 2em;
-  padding: 25px;
+  size: auto;
+  margin: 25px;
+  font-size: 1.8em;
+  padding: 50px;
   background: var(--box-color);
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  border-radius: 25px;
 }
-.text {
-  padding: 25px;
+p {
+  max-width: 1200px;
+}
+h2 {
+  max-width: 1200px;
+}
+.alt {
+  text-align: right;
+  margin-left: auto;
 }
