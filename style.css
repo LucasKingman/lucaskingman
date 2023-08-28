@@ -77,8 +77,9 @@ body {
 
 .home {
   content: var(--home-button);
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
+  padding: 5px;
 }
 
 .page {
@@ -88,8 +89,8 @@ body {
 
 /*Lines up Navigation and spaces them correctly*/
 .nav {
-  height: 50px;
-  line-height: 50px;
+  height: 65px;
+  line-height: 65px;
   vertical-align: middle;
   font-weight: bold;
   font-size: 18px;
@@ -104,16 +105,18 @@ body {
 .theme {
   content: var(--theme-button);
   margin-left: auto;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
+  padding: 5px;
   cursor: pointer;
 }
 
 .menu {
   content: var(--menu-button);
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
+  padding: 5px;
 }
 #dropdown:checked ~ label .menu {
   content: var(--cancel-button);
