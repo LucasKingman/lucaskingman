@@ -1,9 +1,7 @@
 /*Light Mode Color Pallet and Assets*/
 :root {
-  --background-colors: linear-gradient(#4e70e9, #a3d6f2);
-  --sub-background-color: #ffffff40;
-  --box-color: #ffffffbf;
-  --main-color: #292437;
+  --box-color: #ffffff;
+  --main-color: #07060F;
   --home-button: url("./assets/svg/light/home.svg");
   --theme-button: url("./assets/svg/light/theme.svg");
   --menu-button: url("./assets/svg/light/menu.svg");
@@ -12,10 +10,8 @@
 
 /*Dark Mode Color Pallet and Assets*/
 [data-theme="dark"] {
-  --background-colors: linear-gradient(#201567, #2e438c);
-  --sub-background-color: #00000040;
-  --box-color: #000000bf;
-  --main-color: #f7fff7;
+  --box-color: #07060F;
+  --main-color: #ffffff;
   --home-button: url("./assets/svg/dark/home.svg");
   --theme-button: url("./assets/svg/dark/theme.svg");
   --menu-button: url("./assets/svg/dark/menu.svg");
@@ -55,7 +51,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  background: var(--background-colors);
+  background: var(--box-color);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -72,7 +68,6 @@ body {
   width: 100vw;
   background: var(--box-color);
   position: sticky;
-  top: 25px;
 }
 
 .home {
@@ -148,3 +143,11 @@ label {
 
 
 /*TEMPERARY Testing Stuff*/
+.banner {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+.gradient {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
