@@ -2,6 +2,7 @@
 :root {
   --box-color: #ffffff;
   --main-color: #07060F;
+  --bg-gradient: url("./assets/gradient_light.webp");
   --home-button: url("./assets/svg/light/home.svg");
   --theme-button: url("./assets/svg/light/theme.svg");
   --menu-button: url("./assets/svg/light/menu.svg");
@@ -12,6 +13,7 @@
 [data-theme="dark"] {
   --box-color: #07060F;
   --main-color: #ffffff;
+  --bg-gradient: url("./assets/gradient_dark.webp");
   --home-button: url("./assets/svg/dark/home.svg");
   --theme-button: url("./assets/svg/dark/theme.svg");
   --menu-button: url("./assets/svg/dark/menu.svg");
@@ -51,10 +53,11 @@
 body {
   margin: 0px;
   padding: 0px;
-  background: var(--box-color);
+  background-image: var(--bg-gradient);
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   font-family: "Avenir", sans-serif;
   color: var(--main-color);
 }
@@ -150,4 +153,9 @@ label {
 .gradient {
   width: 100%;
   aspect-ratio: 16/9;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
