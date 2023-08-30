@@ -1,7 +1,8 @@
 /*Light Mode Color Pallet and Assets*/
 :root {
-  --box-color: #ffffff;
-  --main-color: #07060F;
+  --primary-color: #ffffff;
+  --secondary-color: #07060F;
+  --accent-color: #E4FBEB;
   --bg-gradient: url("./assets/gradient_light.webp");
   --home-button: url("./assets/svg/light/home.svg");
   --theme-button: url("./assets/svg/light/theme.svg");
@@ -11,8 +12,9 @@
 
 /*Dark Mode Color Pallet and Assets*/
 [data-theme="dark"] {
-  --box-color: #07060F;
-  --main-color: #ffffff;
+  --primary-color: #07060F;
+  --secondary-color: #ffffff;
+  --accent-color: #191F48;
   --bg-gradient: url("./assets/gradient_dark.webp");
   --home-button: url("./assets/svg/dark/home.svg");
   --theme-button: url("./assets/svg/dark/theme.svg");
@@ -59,8 +61,8 @@ body {
   background-position: center;
   background-attachment: fixed;
   font-family: "Avenir", sans-serif;
-  background-color: var(--box-color);
-  color: var(--main-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 
@@ -70,7 +72,7 @@ body {
   flex-wrap: wrap;
   height: auto;
   width: 100vw;
-  background: var(--box-color);
+  background: var(--primary-color);
   position: sticky;
   top: 0%;
 }
@@ -84,7 +86,7 @@ body {
 
 .page {
   text-decoration: none;
-  color: var(--main-color);
+  color: var(--secondary-color);
 }
 
 /*Lines up Navigation and spaces them correctly*/
@@ -150,19 +152,43 @@ label {
 /*TEMPERARY Testing Stuff*/
 .banner {
   width: 100%;
-  height: max(calc(100vh - 130px), 65px);
+  max-height: 100vw;
+  height: auto;
   text-align: center;
   vertical-align: middle;
   line-height: max(calc(100vh - 130px), 65px);
-  font-size: min(10vw, 4em);
+  font-size: min(10vw, 6em);
   font-weight: bold;
 }
 .section {
-  width: 100%;
-  height: 100vh;
-  background-color: var(--box-color);
+  width: calc(100vw - 130px);
+  height: auto;
+  padding: 65px;
+  word-wrap: break-word;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  background-color: var(--primary-color);
+  flex-direction: row-reverse;
+}
+.text {
+  width: 50vw;
+  flex-shrink: 0;
+}
+.image {
+  margin: auto;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.alt {
+  flex-direction: row;
+  background-color: var(--accent-color);
 }
 img {
+  display: block;
   max-width: 100%;
   height: auto;
 }
