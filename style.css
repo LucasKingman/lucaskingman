@@ -59,6 +59,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   font-family: "Avenir", sans-serif;
+  background-color: var(--box-color);
   color: var(--main-color);
 }
 
@@ -71,6 +72,7 @@ body {
   width: 100vw;
   background: var(--box-color);
   position: sticky;
+  top: 0%;
 }
 
 .home {
@@ -148,13 +150,18 @@ label {
 /*TEMPERARY Testing Stuff*/
 .banner {
   width: 100%;
-  aspect-ratio: 16/9;
+  height: max(calc(100vh - 130px), 65px);
+  text-align: center;
+  vertical-align: middle;
+  line-height: max(calc(100vh - 130px), 65px);
+  font-size: min(10vw, 4em);
+  font-weight: bold;
 }
-.gradient {
+.section {
   width: 100%;
-  aspect-ratio: 16/9;
+  height: 100vh;
+  background-color: var(--box-color);
 }
-
 img {
   max-width: 100%;
   height: auto;
