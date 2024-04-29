@@ -1,19 +1,23 @@
 //Dark mode
 
 function detectColorScheme() {
-  var theme = "light"; //default to light
+  //default to light
 
   //local storage is used to override OS theme settings
   if (localStorage.getItem("theme")) {
     if (localStorage.getItem("theme") == "dark") {
       var theme = "dark";
+    } else {
+      var theme = "light";
     }
   } else if (!window.matchMedia) {
     //matchMedia method not supported
-    return false;
+    var theme = "light";;
   } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     //OS theme setting detected as dark
     var theme = "dark";
+  } else {
+    var theme = "light";
   }
 
   //dark theme preferred, set document with a `data-theme` attribute
@@ -39,6 +43,14 @@ function switchTheme(e) {
     document.documentElement.setAttribute("data-theme", "light");
     toggleSwitch.checked = false;
   }
+}
+
+//listener for changing themes
+toggleSwitch.addEventListener("change", switchTheme, false);
+
+//pre-check the dark-theme checkbox if dark-theme is set
+if (document.documentElement.getAttribute("data-theme") == "dark") {
+  toggleSwitch.checked = true;
 }
 
 //listener for changing themes
