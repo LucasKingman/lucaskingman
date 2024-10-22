@@ -8,7 +8,7 @@
   --accent-color-4: #33A4C7;
   --accent-color-5: #285286;
   --accent-color-6: #191F48;
-  --bg-gradient: url("./assets/gradient_blue_light.webp");
+  --bg-gradient: url("./assets/gradient_blue_light_small.webp");
   --home-button: url("./assets/svg/light/home.svg");
   --theme-button: url("./assets/svg/light/theme.svg");
   --menu-button: url("./assets/svg/light/menu.svg");
@@ -26,7 +26,7 @@
   --accent-color-4: #68DED4;
   --accent-color-5: #A5EED1;
   --accent-color-6: #E4FBEB;
-  --bg-gradient: url("./assets/gradient_blue_dark.webp");
+  --bg-gradient: url("./assets/gradient_blue_dark_small.webp");
   --home-button: url("./assets/svg/dark/home.svg");
   --theme-button: url("./assets/svg/dark/theme.svg");
   --menu-button: url("./assets/svg/dark/menu.svg");
